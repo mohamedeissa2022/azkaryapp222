@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تطبيق انا مسلم</string>
+    <string name="azkar">اذكار المساء</string>
+    <string name="azkar_morning">اذكار الصباح</string>
+    <string name="spha">السبحه</string>
+    <string name="info">عن المطور</string>
+    <string name="myinfo">من نحن</string>
+    <string name="desc">"السلام عليكم اخواتي في الله انا الشخص المتواضع في الله الذي قمت بتطوير التطبيق هذا فا ارجو منكم ان تدعو لاجدادي الاموات ولاتنسوني من صالح الدعاء للعلم هذا التطبيق ليس الغرض منه الربح ولاكن الغرض منه هوا الاجر والثواب لي ولكم ارجو ان لا تنسوني واجدادي من صالح الدعاء لا تنسو مشاركه التطبيق مع اصدقائكم لكي يعم الثواب  "</string>
+    <string name="btn_txt_back">الرجوع للخلف</string>
+    <string name="praise">تسبيح</string>
+    <string name="dialog_message">Welcome to Alert Dialog</string>
+    <string name="dialog_title">Javatpoint Alert Dialog</string>
+    <string name="alert_no">لا</string>
+    <string name="alert_yes">تقييم</string>
+</resources>

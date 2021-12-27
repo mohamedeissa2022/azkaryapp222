@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context=".UI_Evening_prayers">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/bg_home_app" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="152dp"
+        app:srcCompat="@drawable/ic_moon_a" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView4"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/cairo_bold"
+        android:gravity="center"
+        android:text="أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ "
+        android:textColor="#FFAB00"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:id="@+id/bg_zoom_in_and_zoom_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg_zoom_in_and_zoom_out"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/zoom_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:padding="2dp"
+            app:srcCompat="@drawable/selector_zoom_out" />
+
+        <ImageView
+            android:id="@+id/zoom_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:padding="2dp"
+            app:srcCompat="@drawable/selector_zoom_in" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/moon_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bg_zoom_in_and_zoom_out"
+        android:layout_marginTop="5dp"
+        tools:visibility="visible" />
+
+
+</RelativeLayout>

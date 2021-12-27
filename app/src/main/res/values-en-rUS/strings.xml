@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">I am Muslim</string>
+    <string name="azkar">Evening prayers</string>
+    <string name="azkar_morning">Citation for morning</string>
+    <string name="spha">the rosary</string>
+    <string name="info">About the developer</string>
+    <string name="myinfo">who are we</string>
+    <string name="desc">Peace be upon you, my sisters in God. I am the person of humility in God who suppressed the development of this application, so I ask you to pray for my dead grandparents and do not forget me from the benefit of supplication for the knowledge. This application is not intended for profit, but the purpose of it is reward and reward for me and for you. Do not forget to share the application with your friends so that the reward prevails</string>
+    <string name="btn_txt_back">Go back</string>
+    <string name="praise">praise</string>
+    <string name="dialog_message">Welcome to Alert Dialog</string>
+    <string name="dialog_title">Javatpoint Alert Dialog</string>
+    <string name="alert_no">no rate</string>
+    <string name="alert_yes">rate app</string>
+</resources>
