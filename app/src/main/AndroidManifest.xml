@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,28 +14,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Azkaryapp222">
         <activity
-            android:name="com.appy.mohamedissa.tester.TestUI"
+            android:name=".ui.Test2222"
             android:exported="true">
 
         </activity>
 
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
+
         <activity
-            android:name=".UI_Islamic"
+            android:name=".ui.Pdf_reader_screen"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name="com.appy.mohamedissa.tester.TestUI"
             android:exported="true" />
         <activity
-            android:name=".UI_Citation_for_morning"
+            android:name=".ui.UI_Islamic"
             android:exported="true" />
         <activity
-            android:name=".UI_Evening_prayers"
+            android:name=".ui.UI_Citation_for_morning"
             android:exported="true" />
         <activity
-            android:name=".UI_praise"
+            android:name=".ui.UI_Evening_prayers"
             android:exported="true" />
         <activity
-            android:name=".homescreenapp"
+            android:name=".ui.UI_praise"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.homescreenapp"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

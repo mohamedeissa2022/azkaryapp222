@@ -3,6 +3,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
 
+
 }
 
 android {
@@ -17,6 +18,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    aaptOptions {
+        noCompress "tflite"
+    }
 
     buildTypes {
         release {
@@ -28,7 +32,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets'
+            }
+        }
+    }
 }
+apply plugin: 'com.google.firebase.firebase-perf'
 
 dependencies {
 
@@ -44,8 +56,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-inappmessaging-display'
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-config'
+    implementation 'com.google.mlkit:smart-reply:16.2.0'
 
     implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.google.firebase:firebase-perf'
+
 
     implementation 'com.google.firebase:firebase-analytics'
 
