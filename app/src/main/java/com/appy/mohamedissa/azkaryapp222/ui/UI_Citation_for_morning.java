@@ -2,15 +2,19 @@ package com.appy.mohamedissa.azkaryapp222.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.appy.mohamedissa.azkaryapp222.MyListAdapter;
 import com.appy.mohamedissa.azkaryapp222.R;
 import com.appy.mohamedissa.azkaryapp222.model.addAzkar;
+import com.appy.mohamedissa.azkaryapp222.model.arraylistdata;
+import com.appy.mohamedissa.azkaryapp222.model.setData.add_Azkar_Model;
 
 import java.util.ArrayList;
 
@@ -22,12 +26,17 @@ public class UI_Citation_for_morning extends AppCompatActivity {
     int textSize111 = 22;
     ImageView img_textSize_zoom_in;
     ImageView img_textSize_zoom_out;
+
+    String testMsg;
     ArrayList<addAzkar> adds = new ArrayList<>();
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui_citation_for_morning);
+
+
         img_textSize_zoom_in = findViewById(R.id.zoom_in_mar);
 
         img_textSize_zoom_out = findViewById(R.id.zoom_out_mar);
@@ -39,6 +48,13 @@ public class UI_Citation_for_morning extends AppCompatActivity {
 
                 textSize111 = +8;
                 listView.invalidateViews();
+                try {
+                    Toast.makeText(getBaseContext(), "is:-" + testMsg, Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
             }
         });
 
@@ -196,10 +212,16 @@ public class UI_Citation_for_morning extends AppCompatActivity {
         azkar.add("أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ ");
         azkar_rolse.add("مائة حسنة، ومُحيت عنه مائة سيئة، وكانت له حرزاً من الشيطان حتى يمسى.");
         azkar_cunter.add("3");
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("azkar",azkar);
+        bundle.putStringArrayList("azkar_rolse",azkar_rolse);
+        bundle.putStringArrayList("azkar_number",azkar_cunter);
         adds.add(new addAzkar(azkar, azkar_cunter, azkar_rolse, textSize111));
-
-
-        MyListAdapter myListAdapter = new MyListAdapter(this, azkar, azkar_rolse, azkar_cunter, textSize111);
+        getdata_from_model().setAzkar(azkar);
+        getdata_from_model().setAzkar_rolse(azkar_rolse);
+        getdata_from_model().setAzkar_number(azkar_cunter);
+        data(bundle).getAzkar();
+        MyListAdapter myListAdapter = new MyListAdapter(this, data(bundle).getAzkar(), data(bundle).getAzkar_rolse(), data(bundle).getAzkar_number(), getdata_from_model().getText_Size());
         listView = (ListView) findViewById(R.id.list_morning);
         listView.setAdapter(myListAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -227,5 +249,27 @@ public class UI_Citation_for_morning extends AppCompatActivity {
 
     }
 
+    public add_Azkar_Model getdata_from_model() {
+        return new add_Azkar_Model(azkar, azkar_rolse, azkar_cunter, textSize111);
+    }
 
+    public arraylistdata data(Bundle bundle) {
+        //Bundle bundle1 = bundle.getBundle("data");
+        ArrayList<String> myAzkar = bundle.getStringArrayList("azkar");
+        ArrayList<String> myAzkar_rolse = bundle.getStringArrayList("azkar_rolse");
+        ArrayList<String> myAzkar_number = bundle.getStringArrayList("azkar_number");
+        ArrayList<arraylistdata> arraylistdata = new ArrayList<>();
+        arraylistdata arraylistdata1 = new arraylistdata();
+        arraylistdata1.setAzkar(myAzkar);
+        arraylistdata1.setAzkar_rolse(myAzkar_rolse);
+        arraylistdata1.setAzkar_number(myAzkar_number);
+        arraylistdata.add(arraylistdata1);
+        return new arraylistdata();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        testMsg = "mohamed";
+    }
 }

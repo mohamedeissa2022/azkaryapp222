@@ -241,6 +241,7 @@ public class UI_Evening_prayers extends AppCompatActivity {
     }
 
 
+
     public add_Azkar_Model add_Azkar_Form_model(){
         return new add_Azkar_Model(azkars,azkar_rolse,azkar_cunter,textSize222);
     }
